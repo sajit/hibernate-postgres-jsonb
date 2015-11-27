@@ -1,7 +1,7 @@
 hibernate-postgres-jsonb
 ======================
 
-Hibernate 4.3.x (JPA 2.1) + PostgreSQL 9.4 JSONB support example.
+Hibernate 5.0.x (JPA 2.1) + PostgreSQL 9.4 JSONB support example.
 
 What I've implemented:
 * Hibernate dialect with JSONB support
@@ -11,7 +11,7 @@ What I've implemented:
 
 # Pre-requisites
 
-* JDK 7
+* JDK 8
 * Maven 3.1.0 or newer
 
 # Build and test
