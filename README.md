@@ -20,9 +20,14 @@ What I've implemented:
 
 Install, configure and start PostgreSQL 9.4 on ```localhost```, with username ```postgres``` and password ```123qwe```. If you change this, you must update ```src/test/resources/META-INF/persistence.xml``` accordingly.
 
+The following is a little more work but I personally prefer not to mess around with the postgres user as I'm
+a postgres n00b.
+
 ```
 sudo su postgres
 createdb dbtest
+create role  dbtestuser  with superuser login password 'password'
+grant all privileges on database dbtest to dbtestuser
 ```
 
 ## Test
