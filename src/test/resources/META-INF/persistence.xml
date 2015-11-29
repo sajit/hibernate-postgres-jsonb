@@ -23,6 +23,7 @@
   <persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <class>com.github.pires.example.model.JSONBEntity</class>
+    <class>com.github.pires.example.model.Schedule</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/dbtest" />
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
