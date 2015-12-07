@@ -79,7 +79,7 @@ public class JSONBUserType extends CollectionUserType implements
           : MAPPER.writeValueAsString(value);
       // otherwise PostgreSQL won't recognize the type
       PGobject pgo = new PGobject();
-      pgo.setType(JSONB_TYPE);
+      pgo.setType(getType());
       pgo.setValue(json);
       st.setObject(index, pgo);
     } catch (JsonProcessingException ex) {
@@ -101,6 +101,11 @@ public class JSONBUserType extends CollectionUserType implements
       throw new IllegalArgumentException("Class: " + clazz
           + " is not a known class type.");
     }
+  }
+
+
+  protected String getType(){
+    return JSONB_TYPE;
   }
 
 }
