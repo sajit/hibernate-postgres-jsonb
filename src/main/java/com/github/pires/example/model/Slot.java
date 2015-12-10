@@ -12,6 +12,7 @@
  */
 package com.github.pires.example.model;
 
+
 /**
  * Created by sajit on 11/28/15.
  */
@@ -20,6 +21,7 @@ public class Slot {
     private Category category;
     private Episode episode;
     private int startTime;
+
 
     public Category getCategory() {
         return category;
@@ -44,4 +46,6 @@ public class Slot {
     public void setStartTime(int startTime) {
         this.startTime = startTime;
     }
+
+
 }
