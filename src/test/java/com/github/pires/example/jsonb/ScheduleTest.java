@@ -72,16 +72,25 @@ public class ScheduleTest {
     @Test
     public void testCreation() {
         int count = getCount().size();
+        final String scheduleName = "test-2";
         tx.begin();
         Schedule schedule = new Schedule();
         schedule.setId(2);
-        schedule.setName("test-2");
+        schedule.setName(scheduleName);
         schedule.setSlots(createSample());
         TestEnvironment.getEntityManager().persist(schedule);
         tx.commit();
 
 
         List<Schedule> result = getCount();
+        Schedule dbSchedule = result.get(0);
+        assertEquals(scheduleName, dbSchedule.getName());
+        assertEquals(5, dbSchedule.getSlots().size());
+        dbSchedule.getSlots().stream().forEach(aList -> aList.stream().forEach(aSlot -> {
+                    assertEquals("cat1", aSlot.getCategory().getName());
+
+                }
+        ));
         assertEquals(result.size(), count + 1);
         tx.begin();
 
